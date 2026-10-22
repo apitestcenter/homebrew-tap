@@ -7,6 +7,9 @@ on:
 jobs:
   cask:
     runs-on: macos-latest
+    env:
+      # The audit asks GitHub about the release; signed-in requests aren't rate-limited like anonymous ones.
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - name: Use this checkout as the tap
