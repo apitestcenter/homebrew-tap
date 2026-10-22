@@ -13,6 +13,8 @@ jobs:
         run: |
           mkdir -p "$(brew --repository)/Library/Taps/apitestcenter"
           ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/apitestcenter/homebrew-tap"
+      # Homebrew only uses a community tap once it is trusted — the same step people run.
+      - run: brew trust apitestcenter/tap
       - run: brew style apitestcenter/tap
       - run: brew audit --cask --strict --online apitestcenter/tap/apitestcenter
       - run: brew install --cask apitestcenter/tap/apitestcenter
