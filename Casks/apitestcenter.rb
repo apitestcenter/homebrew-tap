@@ -6,8 +6,7 @@ cask "apitestcenter" do
   sha256 arm:   "30751cccc3c17726050fc3ea1b3a464b580a4a1a7ec33c28f0d004379122188f",
          intel: "234476a986c3cd85ea5478d6db50c5fd5fca5f599315857c91018e2df9cab180"
 
-  url "https://github.com/apitestcenter/apitestcenter/releases/download/v#{version}/APITestCenter-#{version}-mac-#{arch}.dmg",
-      verified: "github.com/apitestcenter/apitestcenter/"
+  url "https://github.com/apitestcenter/apitestcenter/releases/download/v#{version}/APITestCenter-#{version}-mac-#{arch}.dmg"
   name "APITestCenter"
   desc "API testing and load testing on your own computer"
   homepage "https://apitestcenter.com/"
