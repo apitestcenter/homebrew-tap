@@ -1,0 +1,20 @@
+# Every change to the cask: Homebrew's own checks, then a real install and uninstall on a Mac.
+name: Check
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  cask:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use this checkout as the tap
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/apitestcenter"
+          ln -s "$GITHUB_WORKSPACE" "$(brew --repository)/Library/Taps/apitestcenter/homebrew-tap"
+      - run: brew style apitestcenter/tap
+      - run: brew audit --cask --strict --online apitestcenter/tap/apitestcenter
+      - run: brew install --cask apitestcenter/tap/apitestcenter
+      - run: test -d /Applications/APITestCenter.app
+      - run: brew uninstall --cask apitestcenter
