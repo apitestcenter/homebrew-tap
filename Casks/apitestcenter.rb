@@ -2,9 +2,9 @@
 cask "apitestcenter" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.18.2"
-  sha256 arm:   "eebed0bd18b5555e2a01f032805605054f3d1e0a2b9bc5065474986c349e4203",
-         intel: "6afda876b813f7f63169648bd0f6de6461171a40a06bf3a4797a7230928d97eb"
+  version "0.18.3"
+  sha256 arm:   "3bb1e09f8042598cc50af6f2a8a7e3e386f0ee670cb1ed6d311715842119f01f",
+         intel: "f64448d6789bb2a199aebd8eb0f32c259991daee2f4234294f964522e658bb7c"
 
   url "https://github.com/apitestcenter/apitestcenter/releases/download/v#{version}/APITestCenter-#{version}-mac-#{arch}.dmg"
   name "APITestCenter"
